@@ -6,7 +6,7 @@ import Qwerty from './components/Qwerty'
 import PuzzleStore from './stores/PuzzleStore'
 import { AiOutlinePlayCircle, AiOutlineMeh, AiOutlineSmile } from 'react-icons/ai'
 import { ImSad2 } from 'react-icons/im'
-import ParticlesComponent from './components/Particles'
+import { ParticlesComponent, run } from './components/Particles'
 
 export default observer(function App() {
     const store = useLocalObservable(()=> PuzzleStore)
@@ -25,7 +25,6 @@ export default observer(function App() {
     <div className='h-[100vh] flex flex-col justify-between '>
         <div className="flex flex-col h-[85vh] items-center justify-center cursor-default mt-15">
             <h1 className='text-5xl md:text-8xl w-screen text-center font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400 mb-8 md:mt-12'>Wordle</h1>
-            
             {store.guesses.map((_, i) => (
                 <Guess
                     key={i}
@@ -37,7 +36,7 @@ export default observer(function App() {
 
             { store.won && (
                 <div className='text-center'>
-            
+                    {run()}
                     <div 
                         className=' bg-black p-5 rounded-lg m-5 hover:scale-105 ease-in duration-300 shadow-lg hover:shadow-[#3ebd53]'>
                         <div

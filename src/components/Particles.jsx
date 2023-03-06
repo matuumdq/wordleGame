@@ -2,10 +2,10 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim"; // loads tsparticles-slim
 //import { loadFull } from "tsparticles"; // loads tsparticles
 import { useCallback, useMemo } from "react";
+import { confetti } from "https://cdn.jsdelivr.net/npm/tsparticles-confetti/+esm";
 
-// tsParticles Repository: https://github.com/matteobruni/tsparticles
-// tsParticles Website: https://particles.js.org/
-const ParticlesComponent = (props) => {
+
+export const ParticlesComponent = (props) => {
   // using useMemo is not mandatory, but it's recommended since this value can be memoized if static
   const options = useMemo(() => {
     // using an empty options object will load the default options, which are static particles with no background and 3px radius, opacity 100%, white color
@@ -115,4 +115,44 @@ const ParticlesComponent = (props) => {
   return <Particles id={props.id} init={particlesInit} options={options} />
 };
 
-export default ParticlesComponent;
+const count = 200,
+  defaults = {
+    origin: { y: 0.7 }
+  };
+
+function fire(particleRatio, opts) {
+  confetti(
+    Object.assign({}, defaults, opts, {
+      particleCount: Math.floor(count * particleRatio)
+    })
+  );
+}
+
+export const run = () => {
+    fire(0.25, {
+        spread: 26,
+        startVelocity: 55
+    });
+
+    fire(0.2, {
+        spread: 60
+    });
+
+    fire(0.35, {
+        spread: 100,
+        decay: 0.91,
+        scalar: 0.8
+    });
+
+    fire(0.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: 0.92,
+        scalar: 1.2
+    });
+
+    fire(0.1, {
+        spread: 120,
+        startVelocity: 45
+    });
+};
