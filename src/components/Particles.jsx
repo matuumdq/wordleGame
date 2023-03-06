@@ -25,8 +25,8 @@ const ParticlesComponent = (props) => {
             mode: "push", // adds the particles on click
           },
           onHover: {
-            enable: false, // enables the hover event
-            mode: "repulse", // make the particles run away from the cursor
+            enable: true, // enables the hover event
+            mode: "slow", // make the particles run away from the cursor
           },
         },
         modes: {
