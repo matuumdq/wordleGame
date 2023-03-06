@@ -38,7 +38,7 @@ export default observer(function App() {
                 <div className='text-center'>
                     {run()}
                     <div 
-                        className=' bg-black p-5 rounded-lg m-5 hover:scale-105 ease-in duration-300 shadow-lg hover:shadow-[#3ebd53]'>
+                        className=' bg-black p-5 rounded-lg m-5 hover:scale-105 ease-in duration-300 shadow-lg shadow-[#3ebd53]'>
                         <div
                             className="flex justify-center gap-2 items-center text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-br from-green-800 to-green-400 uppercase"
                         > 
