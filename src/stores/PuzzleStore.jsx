@@ -4,11 +4,12 @@ export default {
     word: '',
     guesses: [],
     currentGuess: 0,
+    
     get won() {
         return this.guesses[this.currentGuess - 1] === this.word
     },
-    get lost () {
-        return this.currentGuess===6
+    get lost() {
+        return ((this.guesses[this.currentGuess - 1] !== this.word) && (this.currentGuess===6))
     },
     get allGuesses(){
         return this.guesses.slice(0, this.currentGuess).join('').split('')
@@ -38,10 +39,10 @@ export default {
     },
     submitGuess() {
         if (words.includes(this.guesses[this.currentGuess])) {
-          this.currentGuess += 1
+            this.currentGuess += 1
         } else {
             this.currentGuess += 1
-        } 
+        }
       },
     handleKyeUp(e) {
         if (this.won || this.lost) {
@@ -58,7 +59,7 @@ export default {
                 this.guesses[this.currentGuess].length - 1
             )
         }
-        if (this.guesses[this.currentGuess].length < 5 && e.key.match(/^[A-z]$/)){
+        if (this.guesses[this.currentGuess].length <= 5 && e.key.match(/^[A-z]$/)){
             this.guesses[this.currentGuess] =
                 this.guesses[this.currentGuess] + e.key.toLowerCase()
         } 
