@@ -21,9 +21,9 @@ export default observer(function App() {
     }, [])
 
   return (
-   <div className='h-screen flex flex-col justify-between bg-gray-600'>
-    <div className="flex flex-col h-[85vh] items-center justify-center cursor-default mt-20">
-        <h1 className='text-8xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400 mb-8'>Wordle</h1>
+   <div className='h-[100vh] flex flex-col justify-between bg-gray-600'>
+    <div className="flex flex-col h-[85vh] items-center justify-center cursor-default mt-15">
+        <h1 className='text-5xl md:text-8xl w-screen text-center font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400 mb-8 md:mt-12'>Wordle</h1>
         
         {store.guesses.map((_, i) => (
             <Guess
@@ -99,7 +99,7 @@ export default observer(function App() {
         
         }
         </div>
-    <div className='bg-[#3a3939] w-full h-[4vh] text-center p-3 '>
+    <div className='bg-[#3a3939] w-full h-[6vh] flex items-center justify-center '>
         <h1 className='text-xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400'>Created By Mateo Salinas</h1>
     </div>
     </div>

@@ -13,7 +13,7 @@ const Guess = ({isGuessed, guess, word}) => {
                         : 'bg-gray-400'
 
                 return(
-                    <div className={`w-20 h-20 md:w-28 md:h-28 border border-gray-200 text-white uppercase font-bold text-4xl flex items-center justify-center ${bgColor} `}>
+                    <div className={`w-12 h-12 md:w-16 md:h-16 border border-gray-200 text-white uppercase font-bold text-4xl flex items-center justify-center ${bgColor} `}>
                         { guess[i]}
                     </div>
                 )
